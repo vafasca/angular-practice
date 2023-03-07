@@ -1,0 +1,25 @@
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 95%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    border-color: aqua;
+  }
+  
+  .cell {
+    flex: 1;
+    text-align: center;
+    padding: 5px;
+  }
+  
+  .containerx {
+    overflow-y: auto;
+    max-height: 75vh;
+    width: 90vw;
+    border: solid 2px;
+    margin: 0 auto;
+  }
