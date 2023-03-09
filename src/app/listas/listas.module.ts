@@ -5,7 +5,7 @@ import { ListasRoutingModule } from './listas-routing.module';
 import { ListasComponent } from './listas.component';
 import { ItemsComponent } from './items/items.component';
 import { FormsModule } from '@angular/forms';
-import { FilterComponent } from './filter/filter/filter.component';
+import { FilterComponent } from './filter/filter.component';
 
 @NgModule({
   declarations: [
