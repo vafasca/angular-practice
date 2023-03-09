@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ListasRoutingModule } from './listas-routing.module';
 import { ListasComponent } from './listas.component';
 import { ItemsComponent } from './items/items.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,8 @@ import { ItemsComponent } from './items/items.component';
   ],
   imports: [
     CommonModule,
-    ListasRoutingModule
+    ListasRoutingModule,
+    FormsModule
   ]
 })
 export class ListasModule { }
