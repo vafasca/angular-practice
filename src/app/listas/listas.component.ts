@@ -22,37 +22,35 @@ export class ListasComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       this.searchTerm = params['term'] || '';
-      this.search();
+      this.onSearch(this.searchTerm);
     });
   }
 
-  search() {
-    console.log('searchTerm:', this.searchTerm);
-
-    if (this.searchTerm) {
+  onSearch(searchTerm: string) {
+    console.log('searchTerm:', searchTerm);
+  
+    if (searchTerm) {
       this.router.navigate([], {
         relativeTo: this.route,
-        queryParams: { term: this.searchTerm },
+        queryParams: { term: searchTerm },
         queryParamsHandling: 'merge',
       });
     }
-
+  
     this.itemSvc
       .getProducts()
       .pipe(
         tap((itemList: Item[]) => {
           console.log('itemList:', itemList);
-
-          if (this.searchTerm) {
+  
+          if (searchTerm) {
             let filteredItems = itemList.filter(
               (item) =>
-                item.name
-                  .toLowerCase()
-                  .includes(this.searchTerm.toLowerCase()) ||
-                item.price.toString().includes(this.searchTerm)
+                item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                item.price.toString().includes(searchTerm)
             );
             console.log('filteredItems:', filteredItems);
-
+  
             // Si filteredItems está vacío, asigna todos los elementos a la propiedad items
             if (filteredItems.length === 0) {
               this.items = itemList;

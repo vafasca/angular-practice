@@ -1,12 +1,5 @@
-<p>listas works!</p>
-<!-- <div class="search">
-    <input type="text" placeholder="Search">
-    <button class="button">Buscar</button>
-</div> -->
-
-<div class="search">
-  <input type="text" placeholder="Search" [(ngModel)]="searchTerm" (input)="search()" />
-</div>
+<app-filter (search)="onSearch($event)"></app-filter>
+<br>
 <section class="scroll-container">
   <app-items
     class="container-padre"

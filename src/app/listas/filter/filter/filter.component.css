@@ -1,0 +1,12 @@
+.filter{
+    text-align: center;
+}
+
+.search{
+  border: 2px solid #eee;
+  background-color: #f7f7f7;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  color: brown;
+}

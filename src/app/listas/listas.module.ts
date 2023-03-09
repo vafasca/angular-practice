@@ -5,11 +5,13 @@ import { ListasRoutingModule } from './listas-routing.module';
 import { ListasComponent } from './listas.component';
 import { ItemsComponent } from './items/items.component';
 import { FormsModule } from '@angular/forms';
+import { FilterComponent } from './filter/filter/filter.component';
 
 @NgModule({
   declarations: [
     ListasComponent,
-    ItemsComponent
+    ItemsComponent,
+    FilterComponent
   ],
   imports: [
     CommonModule,
