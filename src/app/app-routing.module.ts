@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: 'items',
     loadChildren: () =>
-      import('./listas/listas.module').then((m) => m.ListasModule),
+      import('./listas/listas.module').then((m) => m.ListasModule),//carga por defecto el modulo
   },
   {
     path: "**", redirectTo: '/items', pathMatch: 'full' //cuando metes cualqueir webada

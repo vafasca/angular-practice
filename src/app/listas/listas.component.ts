@@ -26,9 +26,46 @@ export class ListasComponent implements OnInit {
     });
   }
 
-  onSearch(searchTerm: string) {
-    console.log('searchTerm:', searchTerm);
+  // onSearch(searchTerm: string) {
+  //   console.log('searchTerm:', searchTerm);
   
+  //   if (searchTerm) {
+  //     this.router.navigate([], {
+  //       relativeTo: this.route,
+  //       queryParams: { term: searchTerm },
+  //       queryParamsHandling: 'merge',
+  //     });
+  //   }
+  
+  //   this.itemSvc
+  //     .getProducts()
+  //     .pipe(
+  //       tap((itemList: Item[]) => {
+  //         console.log('itemList:', itemList);
+  
+  //         if (searchTerm) {
+  //           let filteredItems = itemList.filter(
+  //             (item) =>
+  //               item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //               item.price.toString().includes(searchTerm)
+  //           );
+  //           console.log('filteredItems:', filteredItems);
+  
+  //           // Si filteredItems está vacío, asigna todos los elementos a la propiedad items
+  //           if (filteredItems.length === 0) {
+  //             this.items = itemList;
+  //           } else {
+  //             this.items = filteredItems;
+  //           }
+  //         } else {
+  //           // Si searchTerm está vacío, asigna todos los elementos a la propiedad items
+  //           this.items = itemList;
+  //         }
+  //       })
+  //     )
+  //     .subscribe();
+  // }
+  onSearch(searchTerm: string) {
     if (searchTerm) {
       this.router.navigate([], {
         relativeTo: this.route,
@@ -41,16 +78,12 @@ export class ListasComponent implements OnInit {
       .getProducts()
       .pipe(
         tap((itemList: Item[]) => {
-          console.log('itemList:', itemList);
-  
           if (searchTerm) {
             let filteredItems = itemList.filter(
               (item) =>
-                item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                item.name.toLowerCase().startsWith(searchTerm.toLowerCase()) ||
                 item.price.toString().includes(searchTerm)
             );
-            console.log('filteredItems:', filteredItems);
-  
             // Si filteredItems está vacío, asigna todos los elementos a la propiedad items
             if (filteredItems.length === 0) {
               this.items = itemList;
